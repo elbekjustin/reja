@@ -61,8 +61,8 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: aqua;
-}
+    /* background-color: aqua; */
+} 
 
 .main_frame .left_frame .left_1 .left_1-1 {
     display: flex;
@@ -124,13 +124,12 @@
     color: black;
 }
 
-/* .icon {
+ .icon {
     position: relative;
     width: 24.99px;
     height: 22.8px;
     border-radius: 50%;
     filter: drop-shadow(0 4px 4px rgba(0, 0, 0, 0.25));
-    background: #ffb400;
 }
 
 .icon-1 {
@@ -138,7 +137,7 @@
     left: 29.17%;
     right: 27.08%;
     margin-top: 5.86px;
-} */
+} 
 
 
 .main_frame .left_frame .marginer {
