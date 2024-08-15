@@ -18,7 +18,7 @@ fs.readFile("database/user.json", "utf8", (err, data) => {
     app.use(express.json());
     app.use(express.urlencoded({extended: true}));
 
-    //2. Session code
+    //2.  Session code
 
     //3. Views code
     app.set("views", "views");
