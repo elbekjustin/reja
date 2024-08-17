@@ -13,15 +13,18 @@
 <body> 
     <div class="frame">
         <div class="main_frame">
+
+            <!-- Left Frame -->
+
             <div class="left_frame">
                 <div class="left_1">
                     <div class="left_1-1">
                         <img src="images/profile.png" width="156px" height="142px" alt="photo">
                     </div>
                     <div class="left_1-2">
-                        <%=user.name%>
+                        <%= user.name %>
                     </div>
-                    <div class="left_1-3"><%=user.profession%></div>
+                    <div class="left_1-3"><%= user.profession %></div>
                     <div class="left_icons">
                         <a class="link_href" href="">
                             <div class="icon">
@@ -40,7 +43,7 @@
                         </a>
                         <a class="link_href" href="">
                             <div class="icon">
-                                <img src="icon/linkeding.svg" class="icon-1" />
+                                <img src="icon/Linkeding.svg" class="icon-1" />
                             </div>
                         </a>
                         <a class="link_href" href="">
@@ -55,21 +58,231 @@
                         </a>
                     </div>
                 </div>
+
                 <div class="marginer"></div>
-                <div class="left_2"></div>
+
+                <div class="left_2">
+                    <div class="left_2-1">
+                        <div class="color-1">Age:</div>
+                        <span><%= user.age %></span>
+                    </div>
+                    <div class="left_2-1">
+                        <div class="color-1">Residence:</div>
+                        <span><%= user.residence %></span>
+                    </div>
+                    <div class="left_2-1">
+                        <div class="color-1">Freelance:</div>
+                        <span class="color-2">Available</span>
+                    </div>
+                    <div class="left_2-1">
+                        <div class="color-1">Address:</div>
+                        <span><%= user.address %></span>
+                    </div>
+                </div>
+
                 <div class="marginer"></div>
-                <div class="left_3"></div>
+
+                <div class="left_3">
+                    <h4>Languages</h4>
+                    <div class="container">
+                        <div class="items">
+                            <span><%= user.languages[0] %></span>
+                            <span>80%</span>
+                        </div>
+                            <img src="images/line/line_80.png" alt="photo">
+                    </div>
+                    <div class="container">
+                        <div class="items">
+                            <span><%= user.languages[1] %></span>
+                            <span>75%</span>
+                        </div>
+                            <img src="images/line/line_75.png" alt="photo">                        
+                    </div>
+
+                    <div class="container">
+                        <div class="items">
+                            <span><%= user.languages[2] %></span>
+                            <span>60%</span>
+                        </div>
+                            <img src="images/line/line_60.png" alt="photo">
+                    </div>
+                </div>
+
+               <div class="marginer"></div>
+
+                <div class="left_4">
+                    <h4>Skills</h4>
+
+                    <div class="container">
+                        <div class="items2">
+                            <span><%=user.skills[0]%></span>
+                            <span>90%</span>
+                        </div>
+                        <div>
+                            <img src="images/line/line_90.png" alt="photo">
+                        </div>
+                    </div>
+
+                    <div class="container">
+                        <div class="items2">
+                            <span><%=user.skills[1]%></span>
+                            <span>85%</span>
+                        </div>
+                        <div>
+                            <img src="images/line/line_85.png" alt="photo">
+                        </div>
+                    </div>
+
+                    <div class="container">
+                        <div class="items2">
+                            <span><%=user.skills[2]%></span>
+                            <span>60%</span>
+                        </div>
+                        <div>
+                            <img src="images/line/line_60.png" alt="photo">
+                        </div>
+                    </div>
+
+                    <div class="container">
+                        <div class="items2">
+                            <span><%=user.skills[3]%></span>
+                            <span>60%</span>
+                        </div>
+                        <div>
+                            <img src="images/line/line_60.png" alt="photo">
+                        </div>
+                    </div>
+
+                </div>
+
                 <div class="marginer"></div>
-                <div class="left_4"></div>
+
+                <div class="left_5">
+                    <h4>Extra skills</h4>
+                    <div class="container">
+                        <div class="items3">
+                            <div>
+                                <img src="images/icon_skill.png" alt="photo">
+                            </div>
+                            <span style="margin-left: 20px;"><%=user.extra_skills[0]%></span>
+                         </div>
+                    </div>
+
+                    <div class="container">
+                        <div class="items3">
+                            <div>
+                                <img src="images/icon_skill.png" alt="photo">
+                            </div>
+                            <span style="margin-left: 20px;"><%=user.extra_skills[1]%></span>
+                         </div>
+                    </div>
+
+                    <div class="container">
+                        <div class="items3">
+                            <div>
+                                <img src="images/icon_skill.png" alt="photo">
+                            </div>
+                            <span style="margin-left: 20px;"><%=user.extra_skills[2]%></span>
+                         </div>
+                    </div>
+
+                    <div class="container">
+                        <div class="items3">
+                            <div>
+                                <img src="images/icon_skill.png" alt="photo">
+                            </div>
+                            <span style="margin-left: 20px;"><%=user.extra_skills[3]%></span>
+                         </div>
+                    </div>
+
+                </div>
+
                 <div class="marginer"></div>
-                <div class="left_5"></div>
-                <div class="marginer"></div>
+
             </div>
-            <div class="midd_frame"></div>
-            <div class="right_frame"></div>
+
+
+             <!-- Middle Frame  -->
+
+
+             <div class="midd_frame">
+                <div class="midd_top">
+                    <div class="midd_top-about">
+                        <h1><%=user.profession%> <br>in <%=user.work_place%></h1>
+                        <p><%=user.about_me%> <br> <%=user.about_me2%></p>
+                        <button type="button" class="button" >HIRE ME&nbsp;&nbsp;>></button>
+                    </div>
+                    <div class="midd_top-img">
+                        <img style="bottom: -5px;" class="img1" src="images/your_images.png" alt="photo">
+                    </div>
+                </div>
+
+                <div class="midd_bottom">
+                   <div class="my_service">
+                    <h2 class="service_name" >My Service</h2>
+                    <p><%=user.service_desc%></p>
+                   </div>
+                   <div class="service_item1">
+
+                    <div class="service_itemm">
+                       <img class="service_icon" src="icon/icons_service/icons_servece1.png" alt="photo">
+                       <h4>Web Development</h4>
+                       <p>Blog, E-commerce</p>
+                    </div>
+                       <div class="service_itemm">
+                        <img class="service_icon" src="icon/icons_service/icons_servece2.png" alt="photo">
+                        <h4>UI/UX design</h4>
+                        <p>Mobile app, website design</p>
+                     </div>
+
+                     <div class="service_itemm">
+                        <img class="service_icon" src="icon/icons_service/icons_servece3.png" alt="photo">
+                        <h4>Sound Design</h4>
+                        <p>Voice Over, Beat Making</p>
+                     </div>
+
+                    </div>
+                    
+                   <div class="service_item2">
+
+                    <div class="service_itemm">
+                        <img class="service_icon" src="icon/icons_service/icons_servece4.png" alt="photo">
+                        <h4>Game Design</h4>
+                        <p>Character Design, Props & Objects</p>
+                     </div>
+
+                     <div class="service_itemm">
+                        <img class="service_icon" src="icon/icons_service/icons_servece5.png" alt="photo">
+                        <h4>Photography</h4>
+                        <p>Portrait, Product Photography</p>
+                     </div>
+
+                     <div class="service_itemm">
+                        <h4 style="margin-bottom:0px; margin-top: 20px;" >Advertising</h4>
+                        <p>
+                            Lorem ipsum dolor sit amet, <br>
+                             consectetur adipiscing elit. Vitae <br>
+                              nulla diam in ac dictum a urna <br>
+                             viverra morbi. 
+                        </p>
+                        <p style="color: #FFB400; margin-top: 0px;" >ORDER NOW ></p>
+                     </div>
+                   </div>
+                   
+                </div>
+            </div>
+
+
+            <div class="right_frame">
+                <img style="margin-top: 80px; margin-bottom: 180px;" src="icon/contrast/Contrast.png" alt="photo">
+                <img style="margin-bottom: 43px;" src="icon/contrast/Home.png" alt="photo">
+                <img style="margin-bottom: 43px;" src="icon/contrast/Service.png" alt="photo">
+                <img style="margin-bottom: 43px;" src="icon/contrast/Cv.png" alt="photo">
+                <img style="margin-bottom: 43px;" src="icon/contrast/Portfolio.png" alt="photo">
+                <img style="margin-bottom: 43px;" src="icon/contrast/Blog.png" alt="photo">
+                <img style="margin-bottom: 43px;" src="icon/contrast/Contact.png" alt="photo">
+            </div>
         </div>
     </div>
-     
 </body>
-
-</html>
+</html> 

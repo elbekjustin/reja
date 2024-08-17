@@ -16,8 +16,12 @@
     display: flex;
     flex-direction: row;
     margin-top: 2px;
-    background-color: bisque;
+    background-color:rgb(240, 240, 246);
 }
+
+
+/* Left Frame */
+
 
 .main_frame .left_frame {
     position: relative;
@@ -57,6 +61,7 @@
     height: 267px;
     margin-top: 50px;
     margin-left: 37px;
+    margin-bottom: 25px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -130,6 +135,7 @@
     height: 22.8px;
     border-radius: 50%;
     filter: drop-shadow(0 4px 4px rgba(0, 0, 0, 0.25));
+   
 }
 
 .icon-1 {
@@ -145,8 +151,8 @@
     width: 220px;
     height: 0px;
     margin-left: 40px;
-    margin-bottom: 25px;
-    margin-top: 39px;
+    margin-bottom: 15px;
+    margin-top: 25px;
 
     border: 1.5px solid #f0f0f6;
 }
@@ -157,7 +163,54 @@
     width: 221px;
     height: 126px;
     margin-left: 44px;
-    background-color: aqua;
+    margin-top: 10px;
+}
+
+.main_frame .left_frame .left_2 .left_2-1 {
+    position: relative;
+    display: flex;
+    width: 221px;
+    align-items: center;
+    flex-direction: row;
+    margin-bottom: 10px;
+    justify-content: space-between;
+  }
+
+  h4 {
+    margin-top: 10px;
+    font-weight:500px;
+    font-size:18px;
+  }
+
+  .color-1 {
+    background-color: rgb(255, 180, 0);
+  }
+
+  .color-2 {
+    color: #7EB942;
+  }
+
+.items {
+    line-height: 30px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.items2 {
+    display: flex;
+    justify-content: space-between;
+}
+
+.items3 {
+    line-height: 30px;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
 }
 
 .main_frame .left_frame .left_3 {
@@ -166,8 +219,7 @@
     width: 220px;
     height: 153px;
     margin-left: 45px;
-    margin-top: 25px;
-    background-color: aqua;
+    margin-bottom: 15px;
 }
 
 .main_frame .left_frame .left_4 {
@@ -175,9 +227,7 @@
     position: relative;
     width: 220px;
     height: 252px;
-    margin-top: 25px;
     margin-left: 45px;
-    background-color: aqua;
 }
 
 .main_frame .left_frame .left_5 {
@@ -185,8 +235,116 @@
     position: relative;
     width: 186px;
     height: 148px;
-    margin-top: 25px;
     margin-left: 44px;
-    background-color: aqua;
+    margin-bottom: 15px;
 }
+
+
+/* Main Top */
+
+
+.midd_top {
+    position: relative;
+    width: 971px;
+    height: 454px;
+    justify-content: center;
+    background: rgb(255, 255, 255);
+    margin-top: 3px;
+  
+  }
+
+   .midd_top {
+    display: flex;
+    flex-direction: ;
+   }
+
+  h1 {
+    font-weight: 900;
+    font-size: 48px;
+   
+    margin-top: 90px;
+    font-family:sans-serif;
+  }
+
+  p {
+    font-weight: 400;
+    font-size: 18px;
+  
+    line-height: 24px;
+    color: rgb(118, 118, 118);
+  }
+
+  .button {
+    position: relative;
+    width: 154px;
+    height: 49px;
+    top: 34px;
+  
+    background-color: rgb(255, 180, 0);
+    border-radius: 5px;
+    border: none;
+  }
+
+  .midd_top-img {
+    position: relative;
+    margin-left: 70px;
+    margin-right: -70px;
+    bottom: -8px;
+  }
+
+  .img1 {
+    position:relative;
+  }
+
+
+  /* Main  Bottom*/
+
+
+  .my_service {
+    display: flex;
+    text-align: center;
+    margin-top:120px;
+    margin-bottom: 0px;
+    flex-direction: column;
+  }
+  .service_name {
+    height: 40px;
+    font-weight: 700;
+    font-size: 32px;
+  }
+  .service_itemm {
+    width: 310px;
+    height: 225px;
+    display: flex;
+    flex-direction:column;
+    background-color: white;
+    justify-content: space-between;
+    text-align: center;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+
+  .service_item1 {
+   
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 20px;
+  }
+  .service_item2 {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 20px;
+  }
+
+  .service_icon {
+    top: 20px;
+    display: flex;
+    position: relative;
+    width: 68px;
+    margin-bottom: 20px;
+  }
+
+
 
