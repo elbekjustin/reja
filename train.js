@@ -168,20 +168,34 @@
 // });
 // console.log('passed here 1');
 
-function countLetter(letter, word) {
-    letter = letter.toLowerCase();
-    word = word.toLowerCase();
-    let count = 0;
+
+//// A-TASK
+
+// function countLetter(letter, word) {
+//     letter = letter.toLowerCase();
+//     word = word.toLowerCase();
+//     let count = 0;
   
-    for (let i = 0; i < word.length; i++) {
-      if (word[i] === letter) {
-        count++;
-      }
-    }
+//     for (let i = 0; i < word.length; i++) {
+//       if (word[i] === letter) {
+//         count++;
+//       }
+//     }
   
-    return count;
-  }
+//     return count;
+//   }
   
-//   console.log(countLetter("k", "Koreya")); 
-console.log(countLetter("r", "Uzbekistan")); 
+// //   console.log(countLetter("k", "Koreya")); 
+// console.log(countLetter("r", "Uzbekistan")); 
   
+
+//// B-TASK
+
+  // Stringdagi raqamlarni topish
+
+function countDigits(str) {
+const digits = str.match(/\d/g);
+  return digits ? digits.length : 0;
+}
+
+console.log(countDigits("1q2w3e4r5t6y7u8i"));
