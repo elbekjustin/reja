@@ -2,7 +2,7 @@ const http = require("http");
 const mongodb = require("mongodb");
 
 let db;
-const connectionString = "mongodb+srv://elbekjumanazarov03:1rI2816i3eVqltuk@cluster0.adi7e.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
+const connectionString = "mongodb+srv://elbekjumanazarov03:1rI2816i3eVqltuk@cluster0.adi7e.mongodb.net/Reja?retryWrites=true&w=majority&appName=Cluster0"
 
 mongodb.connect(connectionString, {
     useNewUrlParser: true, 
@@ -12,7 +12,7 @@ mongodb.connect(connectionString, {
     if (err) console.log("ERROR on connection MongoDB");
     else {
         console.log("MongoDB on connection succeed");
-        module.exports = client
+        module.exports =client
         const app = require("./app");
         const server = http.createServer(app);
         let PORT = 3000;
