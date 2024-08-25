@@ -189,13 +189,84 @@
 // console.log(countLetter("r", "Uzbekistan")); 
   
 
-//// B-TASK
+// //// B-TASK
 
-  // Stringdagi raqamlarni topish
+//   // Stringdagi raqamlarni topish
 
-function countDigits(str) {
-const digits = str.match(/\d/g);
-  return digits ? digits.length : 0;
+// function countDigits(str) {
+// const digits = str.match(/\d/g);
+//   return digits ? digits.length : 0;
+// }
+
+// console.log(countDigits("1q2w3e4r5t6y7u8i"));
+
+
+//// C-TASK
+
+//// Chastota va ikki stringdagi harflarni taqqoslash
+
+//// Nomlashda qaysi o'zgaruvchi va qaysi doim o'zgarmasligini mashq qildim
+
+function takrorlanishSoni(soz) {
+  const toplam = {};
+  for (let harflar of soz) {
+      toplam[harflar] = (toplam[harflar] || 0) + 1;
+  }
+  return toplam;
 }
 
-console.log(countDigits("1q2w3e4r5t6y7u8i"));
+function harflarniTekshirish(parametr1, parametr2) {
+  
+  const obyekt1 = takrorlanishSoni(parametr1);
+  const obyekt2 = takrorlanishSoni(parametr2);
+
+  
+  const kalitlar1 = Object.keys(obyekt1).sort();
+  const kalitlar2 = Object.keys(obyekt2).sort();
+
+  if (kalitlar1.length !== kalitlar2.length) return false;
+
+  for (let keyy of kalitlar1) {
+      if (obyekt1[keyy] !== obyekt2[keyy]) return false;
+  }
+
+  return true;
+}
+
+console.log(harflarniTekshirish("elgoog", "goolge")); 
+console.log(harflarniTekshirish("g", "goolge")); 
+
+
+
+console.log("==============================================================");
+
+
+
+function countChars(str) {
+  const charCount = {};
+  for (let char of str) {
+      charCount[char] = (charCount[char] || 0) + 1;
+  }
+  return charCount;
+}
+
+function checkContent(str1, str2) {
+  const count1 = countChars(str1);
+  const count2 = countChars(str2);
+
+  const keys1 = Object.keys(count1).sort();
+  const keys2 = Object.keys(count2).sort();
+
+  if (keys1.length !== keys2.length) return false;
+
+  for (let key of keys1) {
+      if (count1[key] !== count2[key]) return false;
+  }
+
+  return true;
+}
+
+console.log(checkContent("1q2w3e4r", "4r3e2w1q"));
+console.log(checkContent("ㅋㅋㅋ", "ㅋㅋㅌ"));     
+
+
