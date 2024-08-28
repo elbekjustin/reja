@@ -207,66 +207,119 @@
 
 //// Nomlashda qaysi o'zgaruvchi va qaysi doim o'zgarmasligini mashq qildim
 
-function takrorlanishSoni(soz) {
-  const toplam = {};
-  for (let harflar of soz) {
-      toplam[harflar] = (toplam[harflar] || 0) + 1;
-  }
-  return toplam;
-}
+// function takrorlanishSoni(soz) {
+//   const toplam = {};
+//   for (let harflar of soz) {
+//       toplam[harflar] = (toplam[harflar] || 0) + 1;
+//   }
+//   return toplam;
+// }
 
-function harflarniTekshirish(parametr1, parametr2) {
+// function harflarniTekshirish(parametr1, parametr2) {
   
-  const obyekt1 = takrorlanishSoni(parametr1);
-  const obyekt2 = takrorlanishSoni(parametr2);
+//   const obyekt1 = takrorlanishSoni(parametr1);
+//   const obyekt2 = takrorlanishSoni(parametr2);
 
   
-  const kalitlar1 = Object.keys(obyekt1).sort();
-  const kalitlar2 = Object.keys(obyekt2).sort();
+//   const kalitlar1 = Object.keys(obyekt1).sort();
+//   const kalitlar2 = Object.keys(obyekt2).sort();
 
-  if (kalitlar1.length !== kalitlar2.length) return false;
+//   if (kalitlar1.length !== kalitlar2.length) return false;
 
-  for (let keyy of kalitlar1) {
-      if (obyekt1[keyy] !== obyekt2[keyy]) return false;
+//   for (let keyy of kalitlar1) {
+//       if (obyekt1[keyy] !== obyekt2[keyy]) return false;
+//   }
+
+//   return true;
+// }
+
+// console.log(harflarniTekshirish("elgoog", "goolge")); 
+// console.log(harflarniTekshirish("g", "goolge")); 
+
+
+
+// console.log("==============================================================");
+
+
+
+// function countChars(str) {
+//   const charCount = {};
+//   for (let char of str) {
+//       charCount[char] = (charCount[char] || 0) + 1;
+//   }
+//   return charCount;
+// }
+
+// function checkContent(str1, str2) {
+//   const count1 = countChars(str1);
+//   const count2 = countChars(str2);
+
+//   const keys1 = Object.keys(count1).sort();
+//   const keys2 = Object.keys(count2).sort();
+
+//   if (keys1.length !== keys2.length) return false;
+
+//   for (let key of keys1) {
+//       if (count1[key] !== count2[key]) return false;
+//   }
+
+//   return true;
+// }
+
+// console.log(checkContent("1q2w3e4r", "4r3e2w1q"));
+// console.log(checkContent("ㅋㅋㅋ", "ㅋㅋㅌ"));     
+
+
+
+
+
+/////  D-TASK
+
+class Shop {
+  constructor(non, lagmon, cola) {
+      this.ombor = { non, lagmon, cola }; 
+      this.logVaqt();
   }
 
-  return true;
-}
-
-console.log(harflarniTekshirish("elgoog", "goolge")); 
-console.log(harflarniTekshirish("g", "goolge")); 
-
-
-
-console.log("==============================================================");
-
-
-
-function countChars(str) {
-  const charCount = {};
-  for (let char of str) {
-      charCount[char] = (charCount[char] || 0) + 1;
-  }
-  return charCount;
-}
-
-function checkContent(str1, str2) {
-  const count1 = countChars(str1);
-  const count2 = countChars(str2);
-
-  const keys1 = Object.keys(count1).sort();
-  const keys2 = Object.keys(count2).sort();
-
-  if (keys1.length !== keys2.length) return false;
-
-  for (let key of keys1) {
-      if (count1[key] !== count2[key]) return false;
+  // Vaqtni va qoldiqni log qilish
+  logVaqt() {
+      const now = new Date();
+      const vaqtString = now.toLocaleTimeString('en-US', { hour12: false });
+      console.log(`Hozir ${vaqtString}da ${this.ombor.non}ta non, ${this.ombor.lagmon}ta lagmon va ${this.ombor.cola}ta cola mavjud!`);
   }
 
-  return true;
+  // Qoldiqni ko'rsatadi
+  qoldiq() {
+      this.logVaqt();
+      return `Hozir ${new Date().toLocaleTimeString('en-US', { hour12: false })}da ${this.ombor.non}ta non, ${this.ombor.lagmon}ta lagmon va ${this.ombor.cola}ta cola mavjud!`;
+  }
+
+  // Sotish operatsiyasi
+  sotish(mahsulot, miqdor) {
+      if (this.ombor[mahsulot] !== undefined && this.ombor[mahsulot] >= miqdor) {
+          this.ombor[mahsulot] -= miqdor;
+          this.logVaqt();
+          console.log(`${miqdor}ta ${mahsulot} sotildi.`);
+      } else {
+          console.log(`Xato: Yetarli ${mahsulot} mavjud emas.`);
+      }
+  }
+
+  // Qabul qilish operatsiyasi
+  qabul(mahsulot, miqdor) {
+      if (this.ombor[mahsulot] !== undefined) {
+          this.ombor[mahsulot] += miqdor;
+          this.logVaqt();
+          console.log(`${miqdor}ta ${mahsulot} qabul qilindi.`);
+      } else {
+          console.log(`Xato: ${mahsulot} mavjud emas.`);
+      }
+  }
 }
 
-console.log(checkContent("1q2w3e4r", "4r3e2w1q"));
-console.log(checkContent("ㅋㅋㅋ", "ㅋㅋㅌ"));     
-
-
+// Misol uchun foydalanish
+const shop = new Shop(4, 5, 2);
+console.log(shop.qoldiq()); 
+shop.sotish('non', 3);   
+shop.qabul('cola', 4);   
+console.log(shop.qoldiq());
