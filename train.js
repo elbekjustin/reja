@@ -327,10 +327,32 @@
 
 
 
-////// E-TASK
+// ////// E-TASK
 
-function getReverse(str) {
-  return str.split('').reverse().join('');
+
+// function getReverse(str) {
+//   return str.split('').reverse().join('');
+// }
+
+// console.log(getReverse("salom")); 
+
+
+
+/////// F-TASK
+
+
+function findDoublers(s) {
+  for (let i = 0; i < s.length; i++) {
+      if (s.indexOf(s[i]) < i) {
+          return true;
+      }
+  }
+  return false;
 }
 
-console.log(getReverse("salom")); 
+// Misollarni sinash
+console.log(findDoublers("11qq22ww"));  // true
+console.log(findDoublers("asdfg"));   // true
+
+
+
