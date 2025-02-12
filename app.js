@@ -2,7 +2,7 @@ console.log("Web Serverni boshlash");
 const express = require("express");
 const res = require("express/lib/response");
 const app = express();
-// const fs = require("fs");
+const fs = require("fs");
 
 // MongoDB chaqirish
 const db = require("./server").db();
@@ -32,7 +32,7 @@ const mongodb = require("mongodb");
     app.post("/create-item", (req, res) => {
         console.log("user entered /create-item");
 
-        // console.log(req.body);
+        console.log(req.body);
         const new_reja = req.body.reja;
         db.collection("plans").insertOne({reja: new_reja}, (err, data) => {
         
@@ -60,7 +60,7 @@ const mongodb = require("mongodb");
     app.post("/edit-item", (req, res) => {
         const data = req.body;
         console.log(data);
-       db.collection("plans").findOneAndUpdate(
+       db.collection("plans").findOneAndUpdate( // db dan update qilish
         { _id: new mongodb.ObjectId(data.id) },
         {$set: {reja: data.new_input } },
         function (err, data) {
@@ -73,7 +73,7 @@ const mongodb = require("mongodb");
     app.post("/delete-all", (req, res) => {
         if (req.body.delete_all) {
             db.collection("plans").deleteMany(function () {
-                res.json({state: "Hammasi o'chirildi"});
+                res.json({state: "모두 삭제되었습니다!"});
             });
         }
     });

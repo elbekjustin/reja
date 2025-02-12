@@ -5,13 +5,15 @@ function itemTemplate(item) {
                 <span class="item-text">${item.reja}</span>
                 <div>
                     <button 
+                    style="padding: 5px 30px 5px 30px; margin-right: 12px"
                     data-id="${item._id}"
                      class="edit-me btn btn-secondary btn-sm mr-1">
-                        O'zgartirish
+                        수정
                     </button>
                     <button 
+                    style="padding: 5px 30px 5px 30px;"
                     data-id="${item._id}"
-                    class="delete-me btn btn-danger btn-sm">O'chirish</button>
+                    class="delete-me btn btn-danger btn-sm">삭제</button>
                 </div>
                </li>`;
 }
@@ -38,8 +40,8 @@ axios
 document.addEventListener("click", function (e) {
 // delete oper
 console.log(e.target);
-if (e.target.classList.contains("delete-me")) {
-    if (confirm("Aniq o'chirmoqchimisiz ?")) {
+if (e.target.classList.contains("delete-me")) { // contains mavjudmi tekshirish
+    if (confirm("정말 삭제하시겠습니까?")) {
        axios
        .post("/delete-item", {id: e.target.getAttribute("data-id")})
        .then((respose) => {
@@ -47,7 +49,7 @@ if (e.target.classList.contains("delete-me")) {
         e.target.parentElement.parentElement.remove();
        })
        .catch((err) => {
-    console.log("Iltimos qayta harakat qiling !");
+    console.log("다시 시도해 주세요!");
 
        });
     }
@@ -55,7 +57,7 @@ if (e.target.classList.contains("delete-me")) {
 }
 // edit oper
 if (e.target.classList.contains("edit-me")) {
-    let userInput = prompt("O'zgarish kiriting",
+    let userInput = prompt("수정해 주세요",
         e.target.parentElement.parentElement.querySelector(".item-text").innerHTML 
     );
     if (userInput) {
@@ -71,7 +73,7 @@ if (e.target.classList.contains("edit-me")) {
     ).innerHTML = userInput;
     })
     .catch((err) => {
-    console.log("Iltimos qayta harakat qiling !");
+    console.log("다시 시도해 주세요!");
 
     });
     }
